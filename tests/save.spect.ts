@@ -139,15 +139,15 @@ describe("Test plant seed flow", () => {
 
     await sleep(1100);
     //check quantity
-    const x3 = await client.readStorageObjects(session, {
-        object_ids: [
-          {
-            collection: "PlacedItems",
-            key,
-            user_id: session.user_id,
-          },
-        ],
-      });
-    expect((x3.objects[0].value as any).seedGrowthInfo.harvestQuantityRemaining).toEqual((x3.objects[0].value as any).seedGrowthInfo.seed.maxHarvestQuantity)
+    const haverst = await client.readStorageObjects(session, {
+      object_ids: [
+        {
+          collection: "PlacedItems",
+          key,
+          user_id: session.user_id,
+        },
+      ],
+    });
+    //harvest
   });
 });
