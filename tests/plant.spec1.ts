@@ -19,9 +19,9 @@ describe("Test add buy flow", () => {
       network: "testnet",
     });
   });
-  afterEach(async () => {
-    await client.deleteAccount(session);
-  });
+  // afterEach(async () => {
+  //   await client.deleteAccount(session);
+  // });
   test("Test flow ", async () => {
     const { payload } = await client.rpc(session, "buy_seed", {
       key: "carrot",
